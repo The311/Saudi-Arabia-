@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الدول العربية</title>
+  <style>
+    body { font-family: 'Cairo', sans-serif; background: #f1f1f1; text-align: center; direction: rtl; }
+    h1 { color: #2c3e50; margin-top: 20px; }
+    .login-form { background: #fff; margin: 20px auto; padding: 20px; border-radius: 12px; width: 300px; box-shadow: 0 0 10px #ccc; }
+    input[type="text"], input[type="email"], input[type="tel"] { width: 90%; padding: 8px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+    button { background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
+    .countries { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 30px; gap: 20px; }
+    .card { background: white; border-radius: 12px; padding: 15px; width: 250px; box-shadow: 0 0 10px #aaa; text-align: center; }
+    .card img { width: 100%; border-radius: 8px; }
+    .card h3 { margin: 10px 0 5px; }
+    .card p { font-size: 14px; color: #555; }
+    .card a { display: inline-block; margin-top: 10px; background: #2980b9; color: white; padding: 5px 10px; border-radius: 6px; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <h1>مرحبًا بك في بوابة الدول العربية</h1>
+
+  <div class="login-form">
+    <h3>تسجيل الدخول</h3>
+    <input type="text" placeholder="الاسم الكامل" required>
+    <input type="email" placeholder="البريد الإلكتروني" required>
+    <input type="tel" placeholder="رقم الهاتف">
+    <button onclick="alert('تم تسجيل الدخول!')">دخول</button>
+  </div>
+
+  <div class="countries">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Saudi Arabia">
+      <h3>السعودية - Saudi Arabia</h3>
+      <p>الترتيب الاقتصادي: 18 عالميًا</p>
+      <p>من أكبر منتجي النفط، تشتهر بالحرمين الشريفين، وتطور عمراني كبير مثل نيوم.</p>
+      <a href="#">المزيد</a>
+    </div>
+
+    <!-- انسخ وأضف هنا باقي الدول بنفس التنسيق -->
+
+  </div>
+
+</body>
+</html>
